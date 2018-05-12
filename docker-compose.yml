@@ -3,6 +3,8 @@ services:
   homebrewery-mongodb:
     image: "mongo:3.6.4"
     restart: always
+    volumes:
+      - mongodb-volume:/data/db
   homebrewery-node:
     depends_on:
       - "homebrewery-mongodb"
@@ -13,4 +15,7 @@ services:
     command: npm start
     environment:
       - MONGODB_URI=mongodb://homebrewery-mongodb/naturalcrit
+
+volumes:
+  mongodb-volume:
       
