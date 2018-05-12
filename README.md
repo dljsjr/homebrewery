@@ -16,7 +16,7 @@ Homebrewery is open source, so feel free to clone it, tinker with it, or run you
 #### getting started
 1. clone it
 1. `npm install`
-1. `npm build`
+1. `npm run-script build`
 1. `npm start`
 
 #### standalone PHB stylesheet
