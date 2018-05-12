@@ -1,0 +1,16 @@
+version: '3'
+services:
+  homebrewery-mongodb:
+    image: "mongo:3.6.4"
+    restart: always
+  homebrewery-node:
+    depends_on:
+      - "homebrewery-mongodb"
+    build: .
+    ports:
+      - "8000:8000"
+      - "8010:8010"
+    command: npm start
+    environment:
+      - MONGODB_URI=mongodb://homebrewery-mongodb/naturalcrit
+      
